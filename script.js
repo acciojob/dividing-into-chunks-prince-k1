@@ -8,15 +8,19 @@ const divide = (arr, n) => {
         let sub = [];
         for(let j = i; j < arr.length; j++){
             sum += arr[j];
-            if(sum <= n){
+			if(sum == 5 && arr[j] == 0){
+				continue;
+			}
+            if(sum <= n ){
                 sub.push(arr[j]);
                 i = j;
             }
+			
         }
 		result.push(sub);
 	}
     return result;
 };
 
-const n = prompt("Enter n: ");
-alert(JSON.stringify(divide(arr, n)));
+// const n = prompt("Enter n: ");
+// alert(JSON.stringify(divide(arr, n)));
